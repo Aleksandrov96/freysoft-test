@@ -74,12 +74,12 @@ const SwitchStyled = styled(Switch)({
   },
 });
 
-type Props = {
+type CustomSwitchProps = {
   checked: boolean;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-export default function CustomSwitch({ checked, handleChange }: Props) {
+export default function CustomSwitch({ checked, handleChange }: CustomSwitchProps) {
   return (
     <>
       <FormControlLabel

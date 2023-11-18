@@ -1,5 +1,11 @@
-const HomePage = () => {
-  return <div>HomePage</div>;
-};
+import AnalyticsSection from "../components/analytics-section/analytics-section";
+import TransactionsSection from "../components/transactions-section/transactions-section";
 
-export default HomePage;
+export default function HomePage() {
+  return (
+    <>
+      <AnalyticsSection />
+      <TransactionsSection />
+    </>
+  );
+}

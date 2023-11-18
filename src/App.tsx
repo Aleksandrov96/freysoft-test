@@ -1,18 +1,5 @@
-import { Layout } from "./components/layout/layout";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import ExpensesPage from "./pages/ExpensesPage";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      { path: "/", element: <HomePage /> },
-      { path: "/expenses", element: <ExpensesPage /> },
-    ],
-  },
-]);
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router/router";
 
 function App() {
   return <RouterProvider router={router} />;
