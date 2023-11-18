@@ -1,6 +1,6 @@
 import { SvgIcon } from "@mui/material";
 
-export default function Settings() {
+export default function SettingsIcon() {
   return (
     <SvgIcon
       style={{ width: 25, height: 25, fill: "none" }}

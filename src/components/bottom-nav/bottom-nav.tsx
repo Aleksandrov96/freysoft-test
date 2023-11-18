@@ -1,11 +1,11 @@
 import { Container, IconButton } from "@mui/material";
-import Home from "../svg/Home";
-import Card from "../svg/Card";
-import Add from "../svg/Add";
-import Calendar from "../svg/Calendar";
-import Settings from "../svg/Settings";
+import HomeIcon from "../svg/home-icon";
+import ExpensesIcon from "../svg/expenses-icon";
+import AddIcon from "../svg/add-icon";
+import CalendarIcon from "../svg/calendar-icon";
+import SettingsIcon from "../svg/settings-icon";
 
-export default function SimpleBottomNavigation() {
+export default function BottomNav() {
   return (
     <Container
       sx={{
@@ -17,20 +17,20 @@ export default function SimpleBottomNavigation() {
         boxShadow: 3,
       }}
     >
-      <IconButton disableRipple> 
-        <Home />
-      </IconButton >
       <IconButton disableRipple>
-        <Card />
+        <HomeIcon />
       </IconButton>
       <IconButton disableRipple>
-        <Add />
+        <ExpensesIcon />
       </IconButton>
       <IconButton disableRipple>
-        <Calendar />
+        <AddIcon />
       </IconButton>
       <IconButton disableRipple>
-        <Settings />
+        <CalendarIcon />
+      </IconButton>
+      <IconButton disableRipple>
+        <SettingsIcon />
       </IconButton>
     </Container>
   );

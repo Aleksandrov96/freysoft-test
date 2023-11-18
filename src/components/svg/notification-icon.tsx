@@ -1,4 +1,4 @@
-export default function Notification() {
+export default function NotificationIcon() {
   return (
     <svg
       width="25"

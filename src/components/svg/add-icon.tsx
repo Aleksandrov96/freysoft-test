@@ -1,6 +1,6 @@
 import { SvgIcon } from "@mui/material";
 
-export default function Add() {
+export default function AddIcon() {
   return (
     <SvgIcon
       viewBox="0 0 50 49"
