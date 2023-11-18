@@ -1,9 +1,9 @@
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Container from "@mui/material/Container";
-import Avatar from "../svg/Avatar";
+import Avatar from "../svg/avatar";
 import { Box, Typography } from "@mui/material";
-import Notification from "../svg/Notification";
+import NotificationIcon from "../svg/notification-icon";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -66,7 +66,7 @@ export default function Header() {
           >
             {pageTitle}
           </Typography>
-          <Notification />
+          <NotificationIcon />
         </Toolbar>
       </Container>
     </AppBar>

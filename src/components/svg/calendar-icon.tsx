@@ -1,6 +1,6 @@
 import { SvgIcon } from "@mui/material";
 
-export default function Calendar() {
+export default function CalendarIcon() {
   return (
     <SvgIcon
       style={{ width: 25, height: 25, fill: "none" }}
