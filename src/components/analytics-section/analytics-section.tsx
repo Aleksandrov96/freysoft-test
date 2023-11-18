@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import {
   Box,
   Container,
@@ -6,11 +7,75 @@ import {
   Select,
   Typography,
 } from "@mui/material";
-import { BarChart } from "@mui/x-charts";
+import "chart.js/auto";
+import { Bar } from "react-chartjs-2";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 
 export default function AnalyticsSection() {
+  const ref = useRef();
+  const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"];
+  const data = {
+    labels: labels,
+    datasets: [
+      {
+        backgroundColor: [
+          "#FAFAFA",
+          "#FAFAFA",
+          "#8234F8",
+          "#FAFAFA",
+          "#FAFAFA",
+          "#FAFAFA",
+          "#FAFAFA",
+        ],
+        data: [1234, 2234, 5234, 2234, 1000, 2900, 3900],
+        fill: false,
+        borderRadius: 6,
+      },
+    ],
+  };
+
+  const options = {
+    plugins: {
+      datalabels: {
+        labels: {
+          title: {
+            color: "#A3A3A3",
+            font: {
+              weight: "bold",
+            },
+          },
+        },
+        anchor: "end",
+        align: "-90",
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      x: {
+        grid: {
+          drawBorder: false,
+          display: false,
+        },
+   
+      },
+      y: {
+        display: false,
+        ticks: {
+          display: false,
+          beginAtZero: true,
+        },
+        grid: {
+          drawBorder: false,
+          display: false,
+        },
+      },
+    },
+  };
+
   return (
-    <Container sx={{ p: { md: 0, xs: 0 } }}>
+    <Container sx={{ p: { md: 0, xs: 0 }, mb: 0 }}>
       <Box
         sx={{
           display: "flex",
@@ -43,23 +108,15 @@ export default function AnalyticsSection() {
           ></Select>
         </FormControl>
       </Box>
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
-        <BarChart
-          series={[
-            {
-              data: [1234, 2234, 5234, 2234, 1000, 2900, 3900],
-              color: "#8234F8",
-            },
-          ]}
-          xAxis={[
-            {
-              scaleType: "band",
-              data: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
-            },
-          ]}
-          height={200}
-          width={361}
-          leftAxis={null}
+      <Box
+        sx={{ display: "flex", justifyContent: "center", p: { xs: "1rem" } }}
+      >
+        <Bar
+          data={data}
+          plugins={[ChartDataLabels]}
+          options={options}
+          ref={ref}
+          height={180}
         />
       </Box>
     </Container>
