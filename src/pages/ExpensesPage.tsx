@@ -1,5 +1,11 @@
-const ExpensesPage = () => {
-  return <div>ExpensesPage</div>;
-};
+import AnalyticsSection from "../components/analytics-section/analytics-section";
+import TransactionsSection from "../components/transactions-section/transactions-section";
 
-export default ExpensesPage;
+export default function ExpensesPage() {
+  return (
+    <>
+      <AnalyticsSection />
+      <TransactionsSection />
+    </>
+  );
+}

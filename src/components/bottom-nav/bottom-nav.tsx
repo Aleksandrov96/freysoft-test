@@ -11,10 +11,11 @@ export default function BottomNav() {
       sx={{
         position: "fixed",
         bottom: 0,
-        display: "flex",
-        padding: "0 50px",
+        display: { xs: "flex", md: "none" },
+        p: "0 50px",
         justifyContent: "space-between",
         boxShadow: 3,
+        backgroundColor: "#FFFFFF",
       }}
     >
       <IconButton disableRipple>

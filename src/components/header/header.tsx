@@ -1,11 +1,12 @@
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Container from "@mui/material/Container";
-import Avatar from "../svg/avatar";
-import { Box, Typography } from "@mui/material";
-import NotificationIcon from "../svg/notification-icon";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Box, IconButton, Typography } from "@mui/material";
+import Container from "@mui/material/Container";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Avatar from "../svg/avatar";
+import NotificationIcon from "../svg/notification-icon";
+import { BurgerMenu } from "../burger-menu/burger-menu";
 
 const titles = [
   { path: "/", title: "Home" },
@@ -31,6 +32,7 @@ export default function Header() {
         boxShadow: "none",
         display: "flex",
         justifyContent: "space-between",
+        mb: "1rem",
       }}
     >
       <Container maxWidth="xl">
@@ -59,14 +61,18 @@ export default function Header() {
             noWrap
             component="a"
             sx={{
-              display: "flex",
-              color: "black",
+              color: "#000000",
               fontWeight: 500,
             }}
           >
             {pageTitle}
           </Typography>
-          <NotificationIcon />
+          <Box>
+            <IconButton>
+              <NotificationIcon />
+            </IconButton>
+            <BurgerMenu />
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>

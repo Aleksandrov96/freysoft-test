@@ -1,4 +1,7 @@
 import { useState } from "react";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { Container, IconButton, Typography } from "@mui/material";
 import {
   format,
   startOfWeek,
@@ -8,12 +11,9 @@ import {
   addWeeks,
   subWeeks,
 } from "date-fns";
-import "./calendar.css";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { IconButton, Typography } from "@mui/material";
+import "./calendar-section.css";
 
-const Calendar = () => {
+export default function CalendarSection() {
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(new Date());
 
@@ -45,6 +45,7 @@ const Calendar = () => {
       </div>
     );
   };
+
   const renderDays = () => {
     const dateFormat = "EE";
     const days = [];
@@ -58,6 +59,7 @@ const Calendar = () => {
     }
     return <div className="row">{days}</div>;
   };
+  
   const renderCells = () => {
     const startDate = startOfWeek(currentMonth, { weekStartsOn: 1 });
     const endDate = lastDayOfWeek(currentMonth, { weekStartsOn: 1 });
@@ -70,15 +72,20 @@ const Calendar = () => {
       for (let i = 0; i < 7; i++) {
         formattedDate = format(day, dateFormat);
         const cloneDay = day;
+        const marked = i === 1 || i === 2 || i === 3 ? "marked" : "";
+        let classNames;
+        if (isSameDay(day, new Date())) {
+          classNames = "col today";
+        }
+        if (isSameDay(day, selectedDate)) {
+          classNames = "col selected";
+        } else {
+          classNames = `col ${marked}`;
+        }
         days.push(
           <div
-            className={`col ${
-              isSameDay(day, new Date())
-                ? "today"
-                : isSameDay(day, selectedDate)
-                ? "selected"
-                : ""
-            }`}
+            className={classNames}
+            key={i}
             onClick={() => {
               onDateClickHandle(cloneDay);
             }}
@@ -89,19 +96,21 @@ const Calendar = () => {
         day = addDays(day, 1);
       }
 
-      rows.push(<div className="row">{days}</div>);
+      rows.push(
+        <div className="row" key={day as unknown as string}>
+          {days}
+        </div>
+      );
       days = [];
     }
     return <div className="body">{rows}</div>;
   };
 
   return (
-    <div className="calendar">
+    <Container className="calendar">
       {renderHeader()}
       {renderDays()}
       {renderCells()}
-    </div>
+    </Container>
   );
-};
-
-export default Calendar;
+}

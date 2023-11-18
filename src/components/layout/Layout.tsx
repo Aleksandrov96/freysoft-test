@@ -1,10 +1,10 @@
 import { Container } from "@mui/material";
-import BottomNav from "../bottom-nav/bottom-nav";
-import Header from "../header/header";
 import { Outlet } from "react-router-dom";
 import TabbedViewSwitch from "../tabbed-view-switch/tabbed-view-switch";
+import BottomNav from "../bottom-nav/bottom-nav";
+import Header from "../header/header";
 
-export const Layout = () => {
+export default function Layout() {
   return (
     <Container
       sx={{
@@ -17,10 +17,10 @@ export const Layout = () => {
     >
       <Header />
       <TabbedViewSwitch />
-      <main>
+      <main style={{ width: "100%" }}>
         <Outlet />
       </main>
       <BottomNav />
     </Container>
   );
-};
+}
