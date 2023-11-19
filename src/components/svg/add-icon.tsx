@@ -1,6 +1,6 @@
 import { SvgIcon } from "@mui/material";
 
-export default function AddIcon() {
+const AddIcon: React.FC = () => {
   return (
     <SvgIcon
       viewBox="0 0 50 49"
@@ -11,4 +11,6 @@ export default function AddIcon() {
       <path d="M15.3914 25L33.3914 25" stroke="white" strokeWidth="2" />
     </SvgIcon>
   );
-}
+};
+
+export default AddIcon;

@@ -1,9 +1,11 @@
 import { Avatar, Box, Container, Typography } from "@mui/material";
-import { Transaction } from "../../store/transactionsSlice";
+import { Transaction } from "@/store/transactionsSlice";
 
-export default function TransactionItem(props: { transaction: Transaction }) {
-  const { transaction } = props;
+type TransactionItemProps = {
+  transaction: Transaction;
+};
 
+const TransactionItem: React.FC<TransactionItemProps> = ({ transaction }) => {
   return (
     <Container
       sx={{
@@ -43,4 +45,6 @@ export default function TransactionItem(props: { transaction: Transaction }) {
       </Box>
     </Container>
   );
-}
+};
+
+export default TransactionItem;

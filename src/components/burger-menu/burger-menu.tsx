@@ -1,15 +1,15 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { IconButton, Menu } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
-import HomeIcon from "../svg/home-icon";
-import BurgerMenuItem from "./burger-menu-item";
-import ExpensesIcon from "../svg/expenses-icon";
-import AddIcon from "../svg/add-icon";
-import CalendarIcon from "../svg/calendar-icon";
-import SettingsIcon from "../svg/settings-icon";
+import HomeIcon from "@/components/svg/home-icon";
+import BurgerMenuItem from "@/components/burger-menu/burger-menu-item";
+import ExpensesIcon from "@/components/svg/expenses-icon";
+import AddIcon from "@/components/svg/add-icon";
+import CalendarIcon from "@/components/svg/calendar-icon";
+import SettingsIcon from "@/components/svg/settings-icon";
 
-export function BurgerMenu() {
+const BurgerMenu: React.FC = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -26,7 +26,7 @@ export function BurgerMenu() {
       <IconButton
         onClick={handleClick}
         size="small"
-        sx={{ display: { xs: "none", md: "inline-block" } }}
+        sx={{ display: { xs: "none", md: "inline-flex" } }}
         aria-controls={open ? "basic-menu" : undefined}
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
@@ -45,7 +45,12 @@ export function BurgerMenu() {
         MenuListProps={{
           "aria-labelledby": "basic-button",
         }}
-        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          left: "-65px",
+        }}
       >
         <BurgerMenuItem handleCLose={handleClose}>
           <HomeIcon />
@@ -65,4 +70,6 @@ export function BurgerMenu() {
       </Menu>
     </>
   );
-}
+};
+
+export default BurgerMenu;

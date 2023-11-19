@@ -1,4 +1,4 @@
-export default function CardsTemplate() {
+const CardsTemplate: React.FC = () => {
   return (
     <svg
       width="360"
@@ -64,4 +64,6 @@ export default function CardsTemplate() {
       />
     </svg>
   );
-}
+};
+
+export default CardsTemplate;

@@ -79,14 +79,17 @@ type CustomSwitchProps = {
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-export default function CustomSwitch({ checked, handleChange }: CustomSwitchProps) {
+const CustomSwitch: React.FC<CustomSwitchProps> = ({
+  checked,
+  handleChange,
+}) => {
   return (
-    <>
-      <FormControlLabel
-        control={<SwitchStyled checked={checked} onChange={handleChange} />}
-        label=""
-        labelPlacement="bottom"
-      />
-    </>
+    <FormControlLabel
+      control={<SwitchStyled checked={checked} onChange={handleChange} />}
+      label=""
+      labelPlacement="bottom"
+    />
   );
-}
+};
+
+export default CustomSwitch;

@@ -1,9 +1,9 @@
+import { useAppSelector } from "@/store/store";
 import { Box, Container, Typography } from "@mui/material";
-import TransactionItem from "./transaction-item";
-import { useAppSelector } from "../../store/store";
-import { Transaction } from "../../store/transactionsSlice";
+import { Transaction } from "@/store/transactionsSlice";
+import TransactionItem from "@/components/transactions-section/transaction-item";
 
-export default function TransactionsSection() {
+const TransactionsSection: React.FC = () => {
   const { transactions } = useAppSelector((state) => state.transactions);
 
   return (
@@ -36,4 +36,6 @@ export default function TransactionsSection() {
       ))}
     </Container>
   );
-}
+};
+
+export default TransactionsSection;

@@ -10,8 +10,9 @@ import {
 import "chart.js/auto";
 import { Bar } from "react-chartjs-2";
 import ChartDataLabels from "chartjs-plugin-datalabels";
+import type { ChartData, ChartOptions } from 'chart.js';
 
-export default function AnalyticsSection() {
+const AnalyticsSection: React.FC = () => {
   const ref = useRef();
   const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"];
   const data = {
@@ -40,9 +41,6 @@ export default function AnalyticsSection() {
         labels: {
           title: {
             color: "#A3A3A3",
-            font: {
-              weight: "bold",
-            },
           },
         },
         anchor: "end",
@@ -58,7 +56,6 @@ export default function AnalyticsSection() {
           drawBorder: false,
           display: false,
         },
-   
       },
       y: {
         display: false,
@@ -109,16 +106,23 @@ export default function AnalyticsSection() {
         </FormControl>
       </Box>
       <Box
-        sx={{ display: "flex", justifyContent: "center", p: { xs: "1rem" } }}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          p: { xs: "1rem" },
+          height: { md: "300px" },
+        }}
       >
         <Bar
-          data={data}
+          data={data as ChartData<'bar'>}
           plugins={[ChartDataLabels]}
-          options={options}
+          options={options as ChartOptions<'bar'> }
           ref={ref}
           height={180}
         />
       </Box>
     </Container>
   );
-}
+};
+
+export default AnalyticsSection;

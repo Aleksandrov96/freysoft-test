@@ -1,7 +1,7 @@
 import { SvgIcon } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 
-export default function ExpensesIcon() {
+const ExpensesIcon: React.FC = () => {
   const { pathname } = useLocation();
 
   return (
@@ -21,4 +21,6 @@ export default function ExpensesIcon() {
       </SvgIcon>
     </Link>
   );
-}
+};
+
+export default ExpensesIcon;

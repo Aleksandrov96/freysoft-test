@@ -4,16 +4,21 @@ import { Box, IconButton, Typography } from "@mui/material";
 import Container from "@mui/material/Container";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import Avatar from "../svg/avatar";
-import NotificationIcon from "../svg/notification-icon";
-import { BurgerMenu } from "../burger-menu/burger-menu";
+import Avatar from "@/components/svg/avatar";
+import NotificationIcon from "@/components/svg/notification-icon";
+import BurgerMenu from "@/components/burger-menu/burger-menu";
 
-const titles = [
+interface Title {
+  path: string;
+  title: string;
+}
+
+const titles: Title[] = [
   { path: "/", title: "Home" },
   { path: "/expenses", title: "Expenses" },
 ];
 
-export default function Header() {
+const Header: React.FC = () => {
   const [pageTitle, setPageTitle] = useState<string>("");
   const { pathname } = useLocation();
 
@@ -35,7 +40,7 @@ export default function Header() {
         mb: "1rem",
       }}
     >
-      <Container maxWidth="xl" sx={{ p: 0}}>
+      <Container maxWidth="xl" sx={{ p: { xs: 0, md: 0 } }}>
         <Toolbar
           disableGutters
           sx={{
@@ -63,6 +68,7 @@ export default function Header() {
             sx={{
               color: "#000000",
               fontWeight: 500,
+              pl: { md: "2rem" },
             }}
           >
             {pageTitle}
@@ -77,4 +83,6 @@ export default function Header() {
       </Container>
     </AppBar>
   );
-}
+};
+
+export default Header;
