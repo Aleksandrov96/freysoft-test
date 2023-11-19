@@ -1,6 +1,6 @@
 import { SvgIcon } from "@mui/material";
 
-export default function CalendarIcon() {
+const CalendarIcon: React.FC = () => {
   return (
     <SvgIcon
       style={{ width: 25, height: 25, fill: "none" }}
@@ -37,4 +37,6 @@ export default function CalendarIcon() {
       />
     </SvgIcon>
   );
-}
+};
+
+export default CalendarIcon;

@@ -1,10 +1,10 @@
 import { useState } from "react";
-import CustomSwitch from "./custom-switch";
-import CardsSection from "../cards-section/cards-section";
-import CalendarSection from "../calendar-section/calendar-section";
+import CardsSection from "@/components/cards-section/cards-section";
+import CalendarSection from "@/components/calendar-section/calendar-section";
+import CustomSwitch from "@/components/tabbed-view-switch/custom-switch";
 
-export default function TabbedViewSwitch() {
-  const [checked, setChecked] = useState(true);
+const TabbedViewSwitch: React.FC = () => {
+  const [checked, setChecked] = useState<boolean>(true);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
@@ -16,4 +16,6 @@ export default function TabbedViewSwitch() {
       {checked ? <CardsSection /> : <CalendarSection />}
     </>
   );
-}
+};
+
+export default TabbedViewSwitch;

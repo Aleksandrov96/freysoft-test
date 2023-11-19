@@ -1,6 +1,6 @@
 import { SvgIcon } from "@mui/material";
 
-export default function SettingsIcon() {
+const SettingsIcon: React.FC = () => {
   return (
     <SvgIcon
       style={{ width: 25, height: 25, fill: "none" }}
@@ -34,4 +34,6 @@ export default function SettingsIcon() {
       </defs>
     </SvgIcon>
   );
-}
+};
+
+export default SettingsIcon;

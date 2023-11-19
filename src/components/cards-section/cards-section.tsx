@@ -1,10 +1,12 @@
 import { Container } from "@mui/material";
-import CardsTemplate from "../svg/cards-template";
+import CardsTemplate from "@/components/svg/cards-template";
 
-export default function CardsSection() {
+const CardsSection: React.FC = () => {
   return (
-    <Container sx={{ display: "flex", justifyContent: "center" }}>
+    <Container sx={{ display: "flex", justifyContent: "center", mt: "1rem" }}>
       <CardsTemplate />
     </Container>
   );
-}
+};
+
+export default CardsSection;

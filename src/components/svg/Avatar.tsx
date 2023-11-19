@@ -1,4 +1,4 @@
-export default function Avatar() {
+const Avatar: React.FC = () => {
   return (
     <svg
       width="36"
@@ -30,4 +30,6 @@ export default function Avatar() {
       </defs>
     </svg>
   );
-}
+};
+
+export default Avatar;

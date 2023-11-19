@@ -1,11 +1,11 @@
 import { Container, IconButton } from "@mui/material";
-import HomeIcon from "../svg/home-icon";
-import ExpensesIcon from "../svg/expenses-icon";
-import AddIcon from "../svg/add-icon";
-import CalendarIcon from "../svg/calendar-icon";
-import SettingsIcon from "../svg/settings-icon";
+import HomeIcon from "@/components/svg/home-icon";
+import ExpensesIcon from "@/components/svg/expenses-icon";
+import AddIcon from "@/components/svg/add-icon";
+import CalendarIcon from "@/components/svg/calendar-icon";
+import SettingsIcon from "@/components/svg/settings-icon";
 
-export default function BottomNav() {
+const BottomNav: React.FC = () => {
   return (
     <Container
       sx={{
@@ -35,4 +35,6 @@ export default function BottomNav() {
       </IconButton>
     </Container>
   );
-}
+};
+
+export default BottomNav;

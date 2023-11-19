@@ -11,11 +11,11 @@ import {
   addWeeks,
   subWeeks,
 } from "date-fns";
-import "./calendar-section.css";
+import "@/components/calendar-section/calendar-section.css";
 
-export default function CalendarSection() {
-  const [currentMonth, setCurrentMonth] = useState(new Date());
-  const [selectedDate, setSelectedDate] = useState(new Date());
+const CalendarSection: React.FC = () => {
+  const [currentMonth, setCurrentMonth] = useState<Date>(new Date());
+  const [selectedDate, setSelectedDate] = useState<Date>(new Date());
 
   const changeWeekHandle = (btnType: string) => {
     if (btnType === "prev") {
@@ -59,7 +59,7 @@ export default function CalendarSection() {
     }
     return <div className="row">{days}</div>;
   };
-  
+
   const renderCells = () => {
     const startDate = startOfWeek(currentMonth, { weekStartsOn: 1 });
     const endDate = lastDayOfWeek(currentMonth, { weekStartsOn: 1 });
@@ -113,4 +113,6 @@ export default function CalendarSection() {
       {renderCells()}
     </Container>
   );
-}
+};
+
+export default CalendarSection;

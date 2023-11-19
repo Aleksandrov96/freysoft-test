@@ -7,7 +7,7 @@ export interface Transaction {
   receiverImg: string;
 }
 
-export interface TransactionState {
+interface TransactionState {
   transactions: Transaction[];
 }
 

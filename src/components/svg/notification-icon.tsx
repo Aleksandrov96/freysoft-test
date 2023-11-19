@@ -1,11 +1,10 @@
-export default function NotificationIcon() {
+import { SvgIcon } from "@mui/material";
+
+const NotificationIcon: React.FC = () => {
   return (
-    <svg
-      width="25"
-      height="27"
+    <SvgIcon
+      style={{ width: 25, height: 27, fill: "none" }}
       viewBox="0 0 25 27"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M18 10.5017C18 8.91041 17.3679 7.38429 16.2426 6.25907C15.1174 5.13385 13.5913 4.50171 12 4.50171C10.4087 4.50171 8.88258 5.13385 7.75736 6.25907C6.63214 7.38429 6 8.91041 6 10.5017C6 17.5017 3 19.5017 3 19.5017H21C21 19.5017 18 17.5017 18 10.5017Z"
@@ -22,6 +21,8 @@ export default function NotificationIcon() {
         strokeLinejoin="round"
       />
       <circle cx="17" cy="7.50171" r="5" fill="#FF643B" />
-    </svg>
+    </SvgIcon>
   );
-}
+};
+
+export default NotificationIcon;

@@ -1,9 +1,9 @@
 import { SvgIcon } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 
-export default function HomeIcon() {
+const HomeIcon: React.FC = () => {
   const { pathname } = useLocation();
-  
+
   return (
     <Link to="/">
       <SvgIcon
@@ -34,4 +34,6 @@ export default function HomeIcon() {
       </SvgIcon>
     </Link>
   );
-}
+};
+
+export default HomeIcon;
