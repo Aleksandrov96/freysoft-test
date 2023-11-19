@@ -35,7 +35,7 @@ export default function Header() {
         mb: "1rem",
       }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ p: 0}}>
         <Toolbar
           disableGutters
           sx={{
