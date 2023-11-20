@@ -14,12 +14,21 @@ const TransactionItem: React.FC<TransactionItemProps> = ({ transaction }) => {
         borderRadius: "10px",
         display: "flex",
         justifyContent: "space-between",
+        alignItems: "center",
         mb: "1rem",
       }}
     >
-      <Avatar alt={transaction.bankAccountName} src={transaction.receiverImg} />
+      <Avatar
+        alt={transaction.bankAccountName}
+        src={transaction.receiverImg}
+        sx={{ mr: "1rem" }}
+      />
       <Box
-        sx={{ display: "flex", justifyContent: "space-between", width: "85%" }}
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          width: "100%",
+        }}
       >
         <Box>
           <Typography variant="body1" fontWeight="bold">
@@ -29,7 +38,7 @@ const TransactionItem: React.FC<TransactionItemProps> = ({ transaction }) => {
             Bank Account
           </Typography>
         </Box>
-        <Box>
+        <Box sx={{ display: "flex", flexFlow: "column" }}>
           <Typography
             variant="body1"
             fontWeight="bold"
@@ -38,7 +47,7 @@ const TransactionItem: React.FC<TransactionItemProps> = ({ transaction }) => {
           >
             {transaction.transactionAmount}
           </Typography>
-          <Typography variant="caption" color="#A3A3A3">
+          <Typography variant="caption" color="#A3A3A3" textAlign="right">
             {transaction.transactionDate}
           </Typography>
         </Box>
